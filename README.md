@@ -1,7 +1,25 @@
 # fileutils
 
-fileutils has utility functions to read, write, and sync files. E.g.:
+fileutils has utility functions to read, write, and sync files.
 
+## Use Cases
+
+Write file:
+```
+write("/tmp/myfile.txt", std::string_view{"Hello, world!"});
+```
+
+Sync file to storage:
+```
+sync("/tmp/myfile.txt");
+```
+
+Read file as string:
+```
+std::string contents = read_as_string("/tmp/myfile.txt");
+```
+
+Atomically write file:
 ```
 atomic_write(
   "/tmp/myfile.txt",
