@@ -1,5 +1,7 @@
 #pragma once
 
+#include <row/row_fileutils_export.h>
+
 #include <filesystem>
 #include <fstream>
 #include <string_view>
@@ -7,9 +9,9 @@
 
 namespace row_fileutils {
 
-std::string read_as_string(const std::filesystem::path& file);
+std::string ROW_FILEUTILS_EXPORT read_as_string(const std::filesystem::path& file);
 
-std::wstring read_as_wstring(const std::filesystem::path& file);
+std::wstring ROW_FILEUTILS_EXPORT read_as_wstring(const std::filesystem::path& file);
 
 /*!
  * \brief Write to file
@@ -22,7 +24,7 @@ void write(const std::filesystem::path& file, std::basic_string_view<CharT, Trai
  *
  * Implemented using POSIX fsync on Linux. Not yet supported on other platforms.
  */
-void sync_file(const std::filesystem::path& file);
+void ROW_FILEUTILS_EXPORT sync_file(const std::filesystem::path& file);
 
 /*!
  * \brief Atomically write to file
