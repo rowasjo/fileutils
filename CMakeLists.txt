@@ -1,29 +1,11 @@
 
 cmake_minimum_required(VERSION 3.12)
-
 include(CMakePrintHelpers)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-
-##
-## SuperBuild (optional).
-##
-
-option(USE_SUPERBUILD "" TRUE)
-
-if(USE_SUPERBUILD)
-  project(ROW_FileUtils.superbuild VERSION 1.0.0)
-  message(STATUS "Configuring project ${CMAKE_PROJECT_NAME} ...")
-  include(ROW_FileUtils/superbuild)
-  return()
-endif()
-
-##
-## ROW_FileUtils project
-##
 
 project(ROW_FileUtils VERSION 1.0.0)
 message(STATUS "Configuring project ${CMAKE_PROJECT_NAME} ...")
