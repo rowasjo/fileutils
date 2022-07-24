@@ -11,13 +11,13 @@ The SuperBuild works as follows:
 
 Example to build dependencies and the main project with Release configuration.
 
-```Configuration for building dependencies is independent of configuration for building the main project. 
+```Configuration for building dependencies is independent of configuration for building the main project.
 mkdir -p <dir>/build-fileutils-superbuild-release <dir>/build-fileutils-release
 cd <dir>/build-fileutils-superbuild-release
 cmake -DCMAKE_BUILD_TYPE=Release <src-dir>/deps-superbuild
 cmake --build . --target all
 
 cd <dir>/build-fileutils-release
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PROJECT_ROW_fileutils_INCLUDE=<dir>/build-fileutils-superbuild-release/superbuild-paths.cmake <src-dir>
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PROJECT_ROW_FileUtils_INCLUDE=<dir>/build-fileutils-superbuild-release/superbuild-paths.cmake <src-dir>
 cmake --build . --target all
 ```
